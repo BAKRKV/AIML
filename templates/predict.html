@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <style type="text/css">
+        .note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+   <div class="man" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="{{ url_for('home')}}"><img src="{{url_for('static', filename='FEBA.png')}}" width="120px"/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('home')}}">HOME</a></li>
+        <li><a href="{{ url_for('about')}}">ABOUT US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+
+
+<br>
+   <br>
+   <br>
+<div class="container register-form">
+            <div class="form">
+                <div class="note">
+
+                    <h3 style="padding-top: 20px;font-family: 'Crimson Text', serif;">Parameters Form</h3>
+
+
+                </div>
+                <form action="{{ url_for('predict1')}}" method="POST">
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control form-control-lg" name="a" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option name="a" value="">Choose MSSubClass </option>
+                                    <option name="a" value="20">20</option>
+                                    <option name="a" value="30">30</option>
+                                    <option name="a" value="40">40</option>
+                                    <option name="a" value="45">45</option>
+                                    <option name="a" value="50">50</option>
+                                    <option name="a" value="60">60</option>
+                                    <option name="a" value="70">70</option>
+                                    <option name="a" value="75">75</option>
+                                    <option name="a" value="80">80</option>
+                                    <option name="a" value="85">85</option>
+                                    <option name="a" value="90">90</option>
+                                    <option name="a" value="120">120</option>
+                                    <option name="a" value="160">160</option>
+                                    <option name="a" value="180">180</option>
+                                    <option name="a" value="190">190</option>
+                                </select>
+                                                    <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter LotArea between 1300-215245" name="b" required/>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control form-control-lg" name="c" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option value="">Choose OverallQual </option>
+                                    <option name="c" value="1">1</option>
+                                    <option name="c" value="2">2</option>
+                                    <option name="c" value="3">3</option>
+                                    <option name="c" value="4">4</option>
+                                    <option name="c" value="5">5</option>
+                                    <option name="c" value="6">6</option>
+                                    <option name="c" value="7">7</option>
+                                    <option name="c" value="8">8</option>
+                                    <option name="c" value="9">9</option>
+                                    <option name="c" value="10">10</option>
+                                </select>
+                            <br>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter Year of Built between 1872-2010" name="d" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter YearRemodAdd between 1950-2010" name="e" required/>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter MasVnrArea between 0-1600" name="f" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter BsmtFinSF1 between 0-5644" name="g" required/>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter BsmtFinSF2 between 0-1474" name="h" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter BsmtUnfSF between 0-2336" name="i" required/>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter TotalBsmtSF between 0-6110" name="j" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+                     <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter 1stFlrSF between 334-4692" name="k" required/>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter 2ndFlrSF between 0-2065" name="l" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control form-control-lg" name="m" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option value="">Choose LowQualFinSF </option>
+                                    <option name="m" value="0">0</option>
+                                    <option name="m" value="53">53</option>
+                                    <option name="m" value="80">80</option>
+                                    <option name="m" value="120">120</option>
+                                    <option name="m" value="144">144</option>
+                                    <option name="m" value="156">156</option>
+                                    <option name="m" value="205">205</option>
+                                    <option name="m" value="232">232</option>
+                                    <option name="m" value="234">234</option>
+                                    <option name="m" value="360">360</option>
+                                    <option name="m" value="371">371</option>
+                                    <option name="m" value="384">384</option>
+                                    <option name="m" value="390">390</option>
+                                    <option name="m" value="392">392</option>
+                                    <option name="m" value="397">397</option>
+                                    <option name="m" value="420">420</option>
+                                    <option name="m" value="473">473</option>
+                                    <option name="m" value="479">479</option>
+                                    <option name="m" value="481">481</option>
+                                    <option name="m" value="513">513</option>
+                                    <option name="m" value="514">514</option>
+                                    <option name="m" value="515">515</option>
+                                    <option name="m" value="528">528</option>
+                                    <option name="m" value="572">572</option>
+
+                                </select>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter GrLivArea between 334-5642" name="n" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control form-control-lg" name="o" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option value="">Choose TotRmsAbvGrd </option>
+                                    <option name="o" value="2">2</option>
+                                    <option name="o" value="3">3</option>
+                                    <option name="o" value="4">4</option>
+                                    <option name="o" value="5">5</option>
+                                    <option name="o" value="6">6</option>
+                                    <option name="o" value="7">7</option>
+                                    <option name="o" value="8">8</option>
+                                    <option name="o" value="9">9</option>
+                                    <option name="o" value="10">10</option>
+                                    <option name="o" value="11">11</option>
+                                    <option name="o" value="12">12</option>
+                                    <option name="o" value="14">14</option>
+                            </select>
+
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter GarageYrBlt between 1900-2010" name="p" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter GarageArea between 0-1418" name="q" required/>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter WoodDeckSF between 0-857" name="r" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter OpenPorchSF between 0-547" name="s" required/>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter EnclosedPorch between 0-552" name="t" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control form-control-lg" name="u" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option value="">Choose 3SsnPorch </option>
+                                    <option name="u" value="0">0</option>
+                                    <option name="u" value="23">23</option>
+                                    <option name="u" value="96">96</option>
+                                    <option name="u" value="130">130</option>
+                                    <option name="u" value="140">140</option>
+                                    <option name="u" value="144">144</option>
+                                    <option name="u" value="153">153</option>
+                                    <option name="u" value="162">162</option>
+                                    <option name="u" value="168">168</option>
+                                    <option name="u" value="180">180</option>
+                                    <option name="u" value="182">182</option>
+                                    <option name="u" value="196">196</option>
+                                    <option name="u" value="216">216</option>
+                                    <option name="u" value="238">238</option>
+                                    <option name="u" value="245">245</option>
+                                    <option name="u" value="290">290</option>
+                                    <option name="u" value="304">304</option>
+                                    <option name="u" value="320">320</option>
+                                    <option name="u" value="407">407</option>
+                                    <option name="u" value="508">508</option>
+                            </select>
+
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Enter ScreenPorch between 0-480" name="v" required/>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control form-control-lg" name="w" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option value="">Choose MiscVal </option>
+                                    <option name="w" value="0">0</option>
+                                    <option name="w" value="54">54</option>
+                                    <option name="w" value="350">350</option>
+                                    <option name="w" value="400">400</option>
+                                    <option name="w" value="450">450</option>
+                                    <option name="w" value="480">480</option>
+                                    <option name="w" value="500">500</option>
+                                    <option name="w" value="560">560</option>
+                                    <option name="w" value="600">600</option>
+                                    <option name="w" value="620">620</option>
+                                    <option name="w" value="700">700</option>
+                                    <option name="w" value="800">800</option>
+                                    <option name="w" value="1150">1150</option>
+                                    <option name="w" value="1200">1200</option>
+                                    <option name="w" value="1300">1300</option>
+                                    <option name="w" value="1400">1400</option>
+                                    <option name="w" value="2000">2000</option>
+                                    <option name="w" value="2500">2500</option>
+                                    <option name="w" value="3500">3500</option>
+                                    <option name="w" value="8300">8300</option>
+                                    <option name="w" value="15500">15500</option>
+                            </select>
+                            <br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <select class="form-control form-control-lg" name="x" id="validationCustom03" onchange="ChangecatList()" required>
+                                    <option name="x" value="">Choose MoSold </option>
+                                    <option name="x" value="1">1</option>
+                                    <option name="x" value="2">2</option>
+                                    <option name="x" value="3">3</option>
+                                    <option name="x" value="4">4</option>
+                                    <option name="x" value="5">5</option>
+                                    <option name="x" value="6">6</option>
+                                    <option name="x" value="7">7</option>
+                                    <option name="x" value="8">8</option>
+                                    <option name="x" value="9">9</option>
+                                    <option name="x" value="10">10</option>
+                                    <option name="x" value="11">11</option>
+                                    <option name="x" value="12">12</option>
+                            </select>
+                        <br>
+                        </div>
+                    </div>
+
+
+
+                    <button type="submit" class="btnSubmit">Submit</button>
+                </div>
+            </form>
+        </div>
+</div>
+</body>
+</html>

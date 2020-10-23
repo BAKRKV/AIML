@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <title>FEBACLOUD</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+  <style>
+      #imageid
+      {
+          background-color: orangered;
+      }
+      .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+ h1 {
+  	margin-top: 150px;
+    font-family: 'Faster One', cursive;
+    font-size: 40px;
+	}
+  .bg-1 {
+  	background-color: #39A4A9;
+  	color: white;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section1 h2{
+  text-align:center;
+  font-size:40px;
+}
+.section1 p{
+  text-align:center;
+  padding:0px 70px;
+  color:grey;
+}
+.sticky-social{
+  position:fixed;
+  top:20px;
+  left:-40px;
+  padding:0px;
+  margin:0px;
+    margin-top: 200px;
+}
+.social{
+  list-style:none;
+}
+.social li{
+  padding:10px 10px;
+  font-size:25px;
+  transition:all 0.8s ease-in-out;
+}
+.social li:hover{
+    margin-right:-30px;
+ box-shadow:2px 5px 10px grey;
+}
+.social li:hover .fa{
+    margin-left:20px;
+
+}
+.fa{
+  color:#fff;
+  transition:all 0.8s ease-in-out;
+}
+.fb{
+  background-color:#3C5A98;
+}
+.twitter{
+    background-color:#1EA1F2;
+}
+.insta{
+    background-color:#DC4F42;
+}
+.pin{
+    background-color:#CB2128;
+}
+.vim{
+    background-color:#59BFBE;
+}
+  </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+         <div class="man" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="{{ url_for('home')}}"><img src="{{url_for('static', filename='FEBA.png')}}" width="120px"/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+      	<li><a href="{{ url_for('home')}}">HOME</a></li>
+        <li><a href="{{ url_for('about')}}">ABOUT US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+        <br>
+        <br>
+
+<div class="container-fluid bg-1 text-center">
+  <h1><span style="color:#990000; font-family: 'Rye', cursive;">HOUSING Price Prediction</span></h1>
+    <h3 style="font-family: 'Grenze Gotisch', cursive;">Wanna know the price of your house ??</h3>
+
+</div>
+
+        <div>
+            <center><a href="{{ url_for('view')}}" class="button">PREDICT HERE</a></center>
+        </div>
+
+
+
+    <div class="sticky-social">
+  <ul class="social">
+    <li class="fb"><a href="https://www.facebook.com/febatech/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li class="twitter"><a href="https://twitter.com/febatech"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li class="insta"><a href="https://www.instagram.com/febatech/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      <li class="pin"><a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+
+
+    </body>
+</html>
